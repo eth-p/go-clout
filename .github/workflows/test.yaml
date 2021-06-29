@@ -1,0 +1,30 @@
+name: test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout the repo.
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+
+      # Setup Go compiler.
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '^1.16.4'
+
+      # Run tests.
+      - name: Run Tests
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        run: make test
+
+      # Make sure the examples still build.
+      - name: Build Examples
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        run: make example
