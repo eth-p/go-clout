@@ -217,38 +217,74 @@ func TestVerboseAsWriter(t *testing.T) {
 	}{
 		"AsWriter(Info)": {
 			fn:    func(v Verbose) io.Writer { return v.AsWriter(Info) },
-			input: []string{"hello"},
+			input: []string{"hello\n"},
 			expected: []Message{
 				pipedMessage("hello", Info),
 			},
 		},
 		"AsWriter(Status)": {
 			fn:    func(v Verbose) io.Writer { return v.AsWriter(Status) },
-			input: []string{"hello", "world"},
+			input: []string{"hello\n"},
 			expected: []Message{
 				pipedMessage("hello", Status),
-				pipedMessage("world", Status),
 			},
 		},
 		"AsWriter(Warning)": {
 			fn:    func(v Verbose) io.Writer { return v.AsWriter(Warning) },
-			input: []string{"hello"},
+			input: []string{"hello\n"},
 			expected: []Message{
 				pipedMessage("hello", Warning),
 			},
 		},
 		"AsWriter(Deprecation)": {
 			fn:    func(v Verbose) io.Writer { return v.AsWriter(Deprecation) },
-			input: []string{"hello"},
+			input: []string{"hello\n"},
 			expected: []Message{
 				pipedMessage("hello", Deprecation),
 			},
 		},
 		"AsWriter(Error)": {
 			fn:    func(v Verbose) io.Writer { return v.AsWriter(Error) },
-			input: []string{"hello"},
+			input: []string{"hello\n"},
 			expected: []Message{
 				pipedMessage("hello", Error),
+			},
+		},
+		"Multiple Messages Single Input": {
+			fn:    func(v Verbose) io.Writer { return v.AsWriter(Status) },
+			input: []string{"hello\nworld\n"},
+			expected: []Message{
+				pipedMessage("hello", Status),
+				pipedMessage("world", Status),
+			},
+		},
+		"Multiple Input": {
+			fn:    func(v Verbose) io.Writer { return v.AsWriter(Status) },
+			input: []string{"hello\n", "world\n"},
+			expected: []Message{
+				pipedMessage("hello", Status),
+				pipedMessage("world", Status),
+			},
+		},
+		"Buffered Input": {
+			fn:    func(v Verbose) io.Writer { return v.AsWriter(Status) },
+			input: []string{"hello ", "world\n"},
+			expected: []Message{
+				pipedMessage("hello world", Status),
+			},
+		},
+		"Windows CRLF": {
+			fn:    func(v Verbose) io.Writer { return v.AsWriter(Status) },
+			input: []string{"hello world\r\n"},
+			expected: []Message{
+				pipedMessage("hello world", Status),
+			},
+		},
+		"Buffered Input Windows CRLF": {
+			fn:    func(v Verbose) io.Writer { return v.AsWriter(Status) },
+			input: []string{"hello world\r", "\n"},
+			expected: []Message{
+				pipedMessage("hello world", Status),
 			},
 		},
 	}

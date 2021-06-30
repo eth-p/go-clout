@@ -127,7 +127,7 @@ func (v *Verbose) AsWriter(kind MessageKind) io.Writer {
 		return io.Discard // If nothing will be printed anyways, just sinkhole incoming bytes.
 	}
 
-	return messageWriter{
+	return &messageWriter{
 		Printer: v.printer,
 		Converter: func(text string) *Message {
 			msg := New(kind, v.verbosity, "%s", text)
