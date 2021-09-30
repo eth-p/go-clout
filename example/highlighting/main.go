@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/eth-p/clout"
-	"github.com/eth-p/clout/pkg/highlight"
+	"go.eth-p.dev/clout"
+	"go.eth-p.dev/clout/pkg/highlight"
 	"os"
 )
 

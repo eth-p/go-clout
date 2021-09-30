@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/eth-p/clout"
+	"go.eth-p.dev/clout"
 )
 
 var animals = []string{

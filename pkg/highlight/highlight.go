@@ -1,7 +1,7 @@
 package highlight
 
 import (
-	"github.com/eth-p/clout/pkg/color"
+	"go.eth-p.dev/clout/pkg/color"
 )
 
 // Highlight is an interface that can be used to change the style of formatted arguments.

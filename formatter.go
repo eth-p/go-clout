@@ -3,8 +3,8 @@ package clout
 import (
 	"fmt"
 
-	"github.com/eth-p/clout/pkg/fitm"
-	"github.com/eth-p/clout/pkg/highlight"
+	"go.eth-p.dev/clout/pkg/fitm"
+	"go.eth-p.dev/clout/pkg/highlight"
 )
 
 // formatText formats a Message's text into a string that can be printed.

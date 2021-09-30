@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/eth-p/clout/pkg/color"
+	"go.eth-p.dev/clout/pkg/color"
 )
 
 func TestOutput(t *testing.T) {

@@ -1,4 +1,4 @@
-# github.com/eth-p/clout
+# go.eth-p.dev/clout
 (**C**ommand **L**ine **Out**put)
 
 `clout` is a package that helps you print user-friendly output messages from your Go command line applications.
@@ -8,7 +8,7 @@
 
 ```go
 import (
-    "github.com/eth-p/clout"
+    "go.eth-p.dev/clout"
 )
 ```
 
@@ -72,8 +72,8 @@ Best of all, colors are enabled conditionally. If someone pipes your command's o
 
 ```go
 import (
-    "github.com/eth-p/clout"
-    "github.com/eth-p/clout/pkg/highlight"
+    "go.eth-p.dev/clout"
+    "go.eth-p.dev/clout/pkg/highlight"
 )
 
 func main() {

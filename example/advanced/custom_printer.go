@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/eth-p/clout"
-	"github.com/eth-p/clout/pkg/fitm"
-	"github.com/eth-p/clout/pkg/highlight"
+	"go.eth-p.dev/clout"
+	"go.eth-p.dev/clout/pkg/fitm"
+	"go.eth-p.dev/clout/pkg/highlight"
 )
 
 // MyPrinter is a custom implementation of PrinterInterface.

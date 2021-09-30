@@ -4,7 +4,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/eth-p/clout/pkg/color"
+	"go.eth-p.dev/clout/pkg/color"
 )
 
 // Output is an io.Writer where formatted Messages are sent.

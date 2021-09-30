@@ -1,7 +1,7 @@
 package highlight
 
 import (
-	"github.com/eth-p/clout/pkg/color"
+	"go.eth-p.dev/clout/pkg/color"
 )
 
 // New creates a new Highlight from a color.Style

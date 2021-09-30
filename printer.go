@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/eth-p/clout/pkg/color"
+	"go.eth-p.dev/clout/pkg/color"
 )
 
 // PrinterInterface processes and prints a Message.

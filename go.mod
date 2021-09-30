@@ -1,4 +1,4 @@
-module github.com/eth-p/clout
+module go.eth-p.dev/clout
 
 go 1.16
 

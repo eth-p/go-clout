@@ -1,7 +1,7 @@
 all:
-	go build -o "/dev/null" "github.com/eth-p/clout/example/basic"
+	go build -o "/dev/null" "go.eth-p.dev/clout/example/basic"
 
 run:
-	go run "github.com/eth-p/clout/example/basic"
+	go run "go.eth-p.dev/clout/example/basic"
 
 .PHONY: all run
