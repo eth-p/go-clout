@@ -95,7 +95,7 @@ func main() {
 }
 ```
 
-For more detailed examples, feel free to check out the [example directory](example).
+For more detailed examples, feel free to check out the [examples directory](examples).
 
 
 ## License
